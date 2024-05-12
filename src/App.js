@@ -1,18 +1,23 @@
 import React from 'react';
-import {
-  AppBar,
-  Avatar,
-  Container,
+import { 
+  AppBar, 
+  Avatar, 
+  Box, 
+  Container, 
   CssBaseline,
-  Grid,
-  List,
-  ListItem,
-  ListItemText,
-  Toolbar,
-  Typography
+  Grid, 
+  Toolbar, 
+  Typography 
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
+import ProfileOverview from './components/ProfileOverview';
+import ProfileDetails from './components/ProfileDetails';
+import Projects from './components/Projects';
+import Button from '@mui/material/Button';
+import Publications from './components/Publications';
+
+
 
 const darkTheme = createTheme({
   palette: {
@@ -24,61 +29,35 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <div className="App">
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" component="div">
-              My Professional Profile
-            </Typography>
-          </Toolbar>
-        </AppBar>
+      <div className="App" 
+      style={{ position: 'absolute', top: 0, left: 0 }}
+      >
+      <AppBar position="fixed" style={{textAlign:"left" }}>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Chirag's Profile
+          </Typography>
+          <Button color="inherit" href="#profileOverview">Contact</Button>
+          <Button color="inherit" href="#profileDetails">Profile Details</Button>
+          <Button color="inherit" href="#projects">Projects</Button>
+          <Button color="inherit" href="#publications">Publications</Button>
+        </Toolbar>
+      </AppBar>
+      <Toolbar /> {/* To add space so that content doesn't go under the fixed AppBar */}
+      
         <Container maxWidth="md" sx={{ marginTop: 4, marginBottom: 4 }}>
           <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <Avatar alt="Your Profile" src="https://media.licdn.com/dms/image/D4E35AQF5U0ktc3qlZA/profile-framedphoto-shrink_200_200/0/1711567920171?e=1715824800&v=beta&t=LaH6wgA9SoEwJrJbC7mPb7UcJKdGJQfbuGw4e1U8gSo" sx={{ width: 200, height: 200, margin: 'auto', marginBottom: 2 }} />
-              <Typography variant="h5" align="center" gutterBottom>Chirag Bhuvaneshwara</Typography>
-              <Typography variant="body1" align="center" gutterBottom>Machine Learning Engineer</Typography>
+            <Grid item  xs={12} id="profileOverview">
+              <ProfileOverview />
             </Grid>
-            <Grid item xs={12} md={8}>
-              <List>
-                <ListItem>
-                  <ListItemText primary="Summary" secondary="Computer Scientist with ~5 years of expertise in software development, data analysis, machine learning, and interdisciplinary project handling and several publications. Proven track record of success in training machine learning models and collecting data suitable for it with intricate data collection systems. Excels in software development for machine learning projects and can co-ordianting large interdisciplinary teams. Currently working with EU Blue Card. " />
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="Skills" secondary="Python, Java, R, JavaScript, C#, PyTorch, Pandas, sklearn, Flask, ReactJS, Apache Kafka, Javalin, Unity, docker, Git" />
-                </ListItem>
-
-
-                <ListItem>
-                  <ListItemText primary="Experience" />
-                  <List>
-                    <ListItem>
-                      <ListItemText primary="CS Researcher, DFKI GmbH" secondary="April 2022 – Present" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText primary="Junior CS Researcher" secondary="August 2021 – March 2022" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText primary="Student Research Assistant" secondary="August 2019 – July 2021" />
-                    </ListItem>
-                  </List>
-                </ListItem>
-
-                <ListItem>
-                  <ListItemText primary="Education" />
-                  <List>
-                    <ListItem>
-                      <ListItemText primary="MSc Embedded Systems, Saarland University" secondary="October 2017 - November 2021" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText primary="Nitte Meenakshi Institute of Technology" secondary="August 2013 – May 2017" />
-                    </ListItem>
-                  </List>
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="Contact" secondary="chiragbhuvaneshwar@gmail.com" />
-                </ListItem>
-              </List>
+            <Grid item xs={12} id="profileDetails">
+              <ProfileDetails />
+            </Grid>
+            <Grid item xs={12} id="projects">
+              <Projects />
+            </Grid>
+            <Grid item xs={12} id="publications">
+              <Publications />
             </Grid>
           </Grid>
         </Container>
