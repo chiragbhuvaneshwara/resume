@@ -82,7 +82,7 @@ const projectsData = [
   // Add more projects as needed
   {
     // image: `url(${process.env.PUBLIC_URL}/ProjectRAG.png)`,
-    image: "https://t3.ftcdn.net/jpg/05/17/31/54/360_F_517315479_5APCsHqS3fFO0NAHewzDu9XS8Y2PhLBy.jpg",
+    image: "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg",
     associatedWith: "Researcher at DFKI GmbH",
     description: "TCreated StudyMaster, a React-based UI connected to Java backend, that controls virtual characters in Wizard of Oz experiments in real-time. Enabled remote studies with ~100 people.",
     tools: "Java, Javalin, WebSockets, ReactJS, HTML, CSS",
@@ -91,7 +91,7 @@ const projectsData = [
   },
   {
     // image: `url(${process.env.PUBLIC_URL}/ProjectRAG.png)`,
-    image: "https://t3.ftcdn.net/jpg/05/17/31/54/360_F_517315479_5APCsHqS3fFO0NAHewzDu9XS8Y2PhLBy.jpg",
+    image: "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg",
     associatedWith: "Research Assistant at DFKI GmbH",
     description: "Created a browser based tool that allows a user to upload images and have them pre-annotated using Facebook’s detectron based Mask RCNN model and then the GUI allows for the editing of the annotations as needed by the user.",
     tools: "Python, Pytorch, Flask, ReactJS, detectron2, Mask RCNN",
@@ -100,7 +100,7 @@ const projectsData = [
   },
   {
     // image: `url(${process.env.PUBLIC_URL}/ProjectRAG.png)`,
-    image: "https://t3.ftcdn.net/jpg/05/17/31/54/360_F_517315479_5APCsHqS3fFO0NAHewzDu9XS8Y2PhLBy.jpg",
+    image: "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg",
     associatedWith: "Master Thesis Student at Saarland University and DFKI GmbH",
     description: "Interactive controller system that allows a user to control the boxing motions of a virtual character. The motions are synthesised by a Pytorch neural network in Flask backend and REST interface to enable movement of virtual character in Unity.",
     tools: "Python, Tensorflow, Keras, Flask, Unity, Blender",
