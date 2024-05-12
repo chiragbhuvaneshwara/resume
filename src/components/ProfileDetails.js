@@ -70,7 +70,7 @@ function ProfileDetails() {
       alignItems: 'left',
       textAlign: 'left',
       padding:4, marginBottom: 4, backgroundColor: "#303030", borderRadius: "10px",
-      width: "95vw",
+      minWidth: "95vw",
     }}>
       < Typography sx={{ margin: 4}} variant="h2" >Profile Details</Typography>
       <Box sx={{ padding:2, marginBottom: 4, backgroundColor: "dimgray", borderRadius: "10px",}}>

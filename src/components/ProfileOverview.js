@@ -12,8 +12,8 @@ function ProfileOverview() {
     <Box
       sx={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/background-image.jpg)`,
-        height: '100vh',
-        width: "100vw",
+        minHeight: '100vh',
+        minWidth: "100vw",
         padding: 4,
         display: 'flex',
         flexDirection: 'column',
