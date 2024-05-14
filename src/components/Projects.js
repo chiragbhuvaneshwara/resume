@@ -118,9 +118,11 @@ function Projects() {
         textAlign: 'left',
         padding: 4,
         marginBottom: 4,
-        backgroundColor: "#303030",
-        borderRadius: "10px",
-        width: "95vw",
+        backgroundColor: "#A9A9A9", borderRadius: "10px",
+        minWidth: "90vw",
+        margin: "0.5rem",
+        paddingBottom: "2rem",
+        paddingTop: "1rem"
       }}
     >
       <Typography sx={{ margin: 4 }} variant="h2">Projects</Typography>

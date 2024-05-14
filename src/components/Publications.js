@@ -52,7 +52,13 @@ function Publications() {
   const sortedPublications = [...publicationsList].sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
   return (
-    <Box sx={{ marginTop: 4, width: "95vw", }}>
+    <Box sx={{ marginTop: 4, width: "95vw", 
+    minWidth: "90vw",
+    margin: "0.5rem",
+    paddingBottom: "1rem",
+    paddingTop: "1rem",
+    marginLeft: "0.5rem"
+    }}>
       <Typography sx={{ margin: 4}} variant="h2">Publications</Typography>
       <List>
         {sortedPublications.map((publication, index) => (

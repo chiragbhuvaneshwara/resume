@@ -12,9 +12,9 @@ function ProfileOverview() {
     <Box
       sx={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/background-image.jpg)`,
-        minHeight: '100vh',
-        minWidth: "100vw",
-        padding: 4,
+        minHeight: '90vh',
+        minWidth: "90vw",
+        margin: 1,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -26,37 +26,37 @@ function ProfileOverview() {
     >
 
 
-    <Box sx={{ backgroundColor: 'rgba(0, 0, 0, 0.9)', padding: '120px', borderRadius: '10px' }}>
-      <Typography variant="h4" gutterBottom sx={{ color: 'white', fontWeight: 'bold' }}>
+    <Box sx={{ backgroundColor: 'rgba(0, 0, 0, 0.9)', padding: '5vw', borderRadius: '10px' }}>
+      <Typography variant="h5" gutterBottom sx={{ color: 'white', fontWeight: 'bold' }}>
         Contact Details
       </Typography>
       <Box sx={{ color: 'white', fontWeight: 'bold' }}>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
-            <PersonOutline sx={{ fontSize: 32 }} />
+            <PersonOutline sx={{ fontSize: 25 }} />
           </Grid>
           <Grid item>
-            <Typography variant="h4" sx={{ fontSize: 20 }}> 
+            <Typography variant="h6"> 
               Chirag Bhuvaneshwara
             </Typography>
           </Grid>
         </Grid>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
-            <LocationOnOutlined sx={{ fontSize: 32 }} />
+            <LocationOnOutlined sx={{ fontSize: 25 }}/>
           </Grid>
           <Grid item>
-            <Typography variant="h4" sx={{ fontSize: 20 }}> 
+            <Typography variant="h6" > 
               Saarbrucken, Germany
             </Typography>
           </Grid>
         </Grid>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
-            <EmailOutlined sx={{ fontSize: 32 }} />
+            <EmailOutlined sx={{ fontSize: 25 }}/>
           </Grid>
           <Grid item>
-            <Typography variant="h4" sx={{ fontSize: 20 }}> 
+            <Typography variant="h6"> 
               chiragbhuvaneshwar@gmail.com
             </Typography>
           </Grid>

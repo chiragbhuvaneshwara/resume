@@ -58,26 +58,30 @@ const educationEntries = [
     startDate: "August 2013",
     endDate: "May 2017",
     activities: [
-      { name: "•	Relevant coursework: Artificial Neural Networks, Data Strucutures and Algorithms, Information Theory and Coding, Digital Signal Processing, Digital Communication", subActivities: [] },
+      { name: "Relevant coursework: Artificial Neural Networks, Data Strucutures and Algorithms, Information Theory and Coding, Digital Signal Processing, Digital Communication", subActivities: [] },
     ]
   },
 ];
 
 function ProfileDetails() {
   return (
+  <div>
     <Box sx={{ 
       justifyContent: 'left',
       alignItems: 'left',
       textAlign: 'left',
-      padding:4, marginBottom: 4, backgroundColor: "#303030", borderRadius: "10px",
-      minWidth: "95vw",
+      backgroundColor: "#A9A9A9", borderRadius: "10px",
+      minWidth: "90vw",
+      margin: "0.5rem",
+      paddingBottom: "1rem",
+      paddingTop: "1rem"
     }}>
       < Typography sx={{ margin: 4}} variant="h2" >Profile Details</Typography>
-      <Box sx={{ padding:2, marginBottom: 4, backgroundColor: "dimgray", borderRadius: "10px",}}>
+      <Box sx={{ margin: 2, padding:2, marginBottom: 4, backgroundColor: "dimgray", borderRadius: "10px",}}>
         <Typography variant="h5" gutterBottom>Skills</Typography>
           <Skills/>
       </Box>
-      <Box sx={{ padding:2, marginBottom: 4, backgroundColor: "dimgray", borderRadius: "10px", }}>
+      <Box sx={{ margin: 2, padding:2, marginBottom: 4, backgroundColor: "dimgray", borderRadius: "10px", }}>
         <Typography variant="h5" gutterBottom>Work Experience</Typography>
         <List>
           {jobEntries.map((job, index) => (
@@ -97,7 +101,7 @@ function ProfileDetails() {
           ))}
         </List>
       </Box>
-      <Box sx={{ padding:2, marginBottom: 4, backgroundColor: "dimgray", borderRadius: "10px", }}>
+      <Box sx={{ margin: 2, padding:2, marginBottom: 4, backgroundColor: "dimgray", borderRadius: "10px", }}>
         <Typography variant="h5" gutterBottom>Education</Typography>
         <List>
         {educationEntries.map((edu, index) => (
@@ -119,6 +123,7 @@ function ProfileDetails() {
       </Box>
 
     </Box>
+  </div>
   );
 }
 
