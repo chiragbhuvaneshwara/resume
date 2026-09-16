@@ -134,19 +134,35 @@ function VisitingCard() {
                   </Typography>
                 ))}
               </Stack>
-              <Button
-                variant="contained"
-                startIcon={<RocketLaunchOutlinedIcon />}
-                href={LINKS.demo}
-                target="_blank"
-                rel="noopener"
-                sx={{ mt: 'auto' }}
-              >
-                Try the live demo
-              </Button>
-              <Link href="#projects" variant="caption" sx={{ mt: 1 }}>
-                More about this project ↓
-              </Link>
+              <Box sx={{ mt: 'auto' }}>
+                <Button
+                  variant="contained"
+                  fullWidth
+                  startIcon={<RocketLaunchOutlinedIcon />}
+                  href={LINKS.demo}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Try the live demo
+                </Button>
+                <Link
+                  href={LINKS.demo}
+                  target="_blank"
+                  rel="noopener"
+                  sx={{
+                    display: 'block',
+                    mt: 0.75,
+                    fontWeight: 600,
+                    wordBreak: 'break-all',
+                    fontSize: '0.85rem',
+                  }}
+                >
+                  {LINKS.demo}
+                </Link>
+                <Link href="#projects" variant="caption" sx={{ display: 'block', mt: 0.5 }}>
+                  More about this project ↓
+                </Link>
+              </Box>
             </Paper>
           </Grid>
 
@@ -203,9 +219,16 @@ function VisitingCard() {
                   target="_blank"
                   rel="noopener"
                   underline="hover"
-                  sx={{ color: '#fff', display: 'flex', alignItems: 'center', gap: 1 }}
+                  sx={{
+                    color: '#fff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1,
+                    wordBreak: 'break-all',
+                  }}
                 >
-                  <LinkedInIcon fontSize="small" /> /in/chirag-bhuvaneshwara
+                  <LinkedInIcon fontSize="small" />
+                  {LINKS.linkedin.replace(/^https?:\/\//, '')}
                 </Link>
               </Stack>
 
