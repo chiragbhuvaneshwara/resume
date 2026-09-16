@@ -1,53 +1,54 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography, Stack, Chip } from '@mui/material';
 
-const skillsList = [
-  "Python",
-  "Java",
-  "R",
-  "JavaScript",
-  "C#",
-  "HuggingFace",
-  "LangChain",
-  "ChromaDB",
-  "OpenAI API",
-  "Tensorflow",
-  "PyTorch",
-  "Pandas",
-  "sklearn",
-  "Flask",
-  "ReactJS",
-  "Apache Kafka",
-  "Javalin",
-  "Unity",
-  "docker",
-  "Git",
-  "data preprocessing",
-  "model training",
-  "model evaluation",
-  "prompt engineering"
+const primarySkills = [
+  'Artificial Intelligence',
+  'Human-Computer Interaction / Human-Centered AI',
+  'Machine Learning',
+];
+
+const secondarySkills = [
+  'Affective Computing',
+  'Generative AI',
+  'Large Language Models',
+  'Technology-Enhanced Learning',
+  'Interactive Agents',
+  'Social Signal Processing',
+  'Multimodal Interaction',
+  'Research Software Engineering',
+  'Data Science',
+  'Software Prototyping',
+  'Interdisciplinary Research',
+  'Learning Technologies',
 ];
 
 function Skills() {
   return (
-    <div>
-      {skillsList.map((skill, index) => (
-        <Box
-          key={index}
-          sx={{
-            backgroundColor: '#f0f0f0', // Tray box background color
-            padding: '10px',
-            margin: '5px',
-            borderRadius: '5px',
-            fontWeight: 'bold',
-            color: 'black',
-            display: 'inline-block',
-          }}
-        >
-          {skill}
-        </Box>
-      ))}
-    </div>
+    <Box>
+      <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
+        {primarySkills.map((skill) => (
+          <Chip
+            key={skill}
+            label={skill}
+            color="primary"
+            sx={{ mb: 1, fontWeight: 600 }}
+          />
+        ))}
+      </Stack>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        Also work with
+      </Typography>
+      <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+        {secondarySkills.map((skill) => (
+          <Chip
+            key={skill}
+            label={skill}
+            variant="outlined"
+            sx={{ mb: 1, borderColor: '#cbd5e1' }}
+          />
+        ))}
+      </Stack>
+    </Box>
   );
 }
 

@@ -1,101 +1,129 @@
-import React from 'react';
-import { 
-  AppBar, 
-  Avatar, 
-  Box, 
-  Container, 
+import React, { useState } from 'react';
+import {
+  AppBar,
+  Box,
   CssBaseline,
-  Grid, 
-  Toolbar, 
-  Typography 
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  useMediaQuery,
 } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import MenuIcon from '@mui/icons-material/Menu';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './components/Theme';
 import './App.css';
-import ProfileOverview from './components/ProfileOverview';
-import ProfileDetails from './components/ProfileDetails';
+
+import VisitingCard from './components/VisitingCard';
+import About from './components/About';
+import Trajectory from './components/Trajectory';
 import Projects from './components/Projects';
-import Button from '@mui/material/Button';
 import Publications from './components/Publications';
-import darkTheme from './components/Theme';
+import Collaboration from './components/Collaboration';
+import ProfileDetails from './components/ProfileDetails';
+import Contact from './components/Contact';
 
-
-// const darkTheme = createTheme({
-//   palette: {
-//     mode: 'dark',
-//   },
-// });
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'EC-TEL 2026', href: '#ectel', highlight: true },
+  { label: 'Research & Projects', href: '#projects' },
+  { label: 'Publications', href: '#publications' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' },
+];
 
 function App() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+
+  const handleNav = () => setMobileOpen(false);
+
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App" 
-      style={{ position: 'absolute', top: 0, left: 0 }}
-      >
-      <AppBar position="fixed" style={{textAlign:"left" }}>
+
+      <AppBar position="sticky" elevation={0}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Chirag's Profile
+          <Typography
+            variant="h6"
+            component="a"
+            href="#home"
+            sx={{
+              flexGrow: 1,
+              fontWeight: 700,
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            Chirag Bhuvaneshwara
           </Typography>
-          <Button color="inherit" href="#profileOverview" >
-            <Typography variant="button"
-            style={{fontSize: '0.7rem'}}
-            >Contact</Typography>
-          </Button>
-          <Button color="inherit" href="#profileDetails">
-            <Typography variant="button"
-             style={{fontSize: '0.7rem'}}
-            >Details</Typography>
-          </Button>
-          <Button color="inherit" href="#projects">
-            <Typography variant="button"
-             style={{fontSize: '0.7rem'}}
-            >Projects</Typography>
-          </Button>
-          <Button color="inherit" href="#publications">
-            <Typography variant="button"
-             style={{fontSize: '0.7rem'}}
-            >Publications</Typography>
-          </Button>
+
+          {isDesktop ? (
+            <Box sx={{ display: 'flex', gap: 0.5 }}>
+              {navItems.map((item) => (
+                <Button
+                  key={item.label}
+                  href={item.href}
+                  variant={item.highlight ? 'contained' : 'text'}
+                  color={item.highlight ? 'primary' : 'inherit'}
+                  size="small"
+                >
+                  {item.label}
+                </Button>
+              ))}
+            </Box>
+          ) : (
+            <IconButton
+              color="inherit"
+              edge="end"
+              onClick={() => setMobileOpen(true)}
+              aria-label="open navigation menu"
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
-      <Toolbar />
-      
-        {/* <Container maxWidth="md" sx={{ marginTop: 4, marginBottom: 4 }}>
-          <Grid container spacing={4}>
-            <Grid item  xs={12} id="profileOverview">
-              <ProfileOverview />
-            </Grid>
-            <Grid item xs={12} id="profileDetails">
-              <ProfileDetails />
-            </Grid>
-            <Grid item xs={12} id="projects">
-              <Projects />
-            </Grid>
-            <Grid item xs={12} id="publications">
-              <Publications />
-            </Grid>
-          </Grid>
-        </Container> */}
 
-      <Box sx={{width: '100%' }}>
-        <Grid container spacing={4}>
-          <Grid item xs={12} id="profileOverview">
-            <ProfileOverview />
-          </Grid>
-          <Grid item xs={12} id="profileDetails">
-            <ProfileDetails/>
-          </Grid>
-          <Grid item xs={12} id="projects">
-            <Projects />
-          </Grid>
-          <Grid item xs={12} id="publications">
-            <Publications />
-          </Grid>
-        </Grid>
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+      >
+        <Box sx={{ width: 240 }} role="presentation">
+          <List>
+            {navItems.map((item) => (
+              <ListItem key={item.label} disablePadding>
+                <ListItemButton component="a" href={item.href} onClick={handleNav}>
+                  <ListItemText
+                    primary={item.label}
+                    primaryTypographyProps={{
+                      fontWeight: item.highlight ? 700 : 500,
+                      color: item.highlight ? 'primary.main' : 'text.primary',
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+
+      <Box component="main">
+        <VisitingCard />
+        <About />
+        <Trajectory />
+        <Projects />
+        <Publications />
+        <Collaboration />
+        <ProfileDetails />
+        <Contact />
       </Box>
-
-      </div>
     </ThemeProvider>
   );
 }

@@ -1,71 +1,76 @@
-# Getting Started with Create React App
+# Chirag Bhuvaneshwara — Personal Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A minimal, responsive personal landing page / digital visiting card for
+**Chirag Bhuvaneshwara** — computer scientist working across human-centered AI,
+learning technologies, and affective computing.
 
-## Available Scripts
+🔗 **Live:** https://chiragbhuvaneshwara.github.io/resume/
 
-In the project directory, you can run:
+Built for EC-TEL 2026 as a single-screen "visiting card": above the fold it shows
+how to connect (email, LinkedIn link + QR code), the EC-TEL 2026 demo
+(**Learning Journey Design Agent**), and a summary of the MITHOS PhD work on
+teacher training for conflict resolution. Everything is explained in more detail
+in the sections below the fold.
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [React](https://react.dev/) (Create React App)
+- [MUI](https://mui.com/) for components and theming
+- [qrcode.react](https://github.com/zpao/qrcode.react) for the LinkedIn QR code
+- Deployed to GitHub Pages via the [`gh-pages`](https://github.com/tschaub/gh-pages) branch
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project structure
 
-### `npm test`
+```
+src/
+  App.js                 layout + responsive navigation
+  config.js              all outward-facing links + EC-TEL facts (edit here)
+  components/
+    Theme.js             minimal light theme, responsive font scaling
+    VisitingCard.js      above-the-fold connect + EC-TEL + PhD dashboard
+    About.js             "What I Work On" + research interests
+    Trajectory.js        research-trajectory diagram
+    Projects.js          featured projects (cards + detail dialog)
+    Publications.js      selected publications + earlier work
+    Collaboration.js     interdisciplinary collaboration
+    ProfileDetails.js    current role (K8) + doctoral research + skills
+    Contact.js           contact footer
+public/
+  profile.png            headshot avatar (also the browser-tab favicon source)
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To update contact links, the demo URL, or EC-TEL details, edit **`src/config.js`**.
 
-### `npm run build`
+## Local development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Requires the legacy OpenSSL provider on Node 17+; the npm scripts set this
+> automatically via `cross-env`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+npm start        # http://localhost:3000
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Build
 
-### `npm run eject`
+```bash
+npm run build    # outputs an optimized bundle to build/
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deploy
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Publishes the production build to the `gh-pages` branch, which serves the live
+site:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run deploy
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+GitHub Pages usually reflects the change within 1–3 minutes.
 
-## Learn More
+### Notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# resume.github.io
+- The `homepage` field in `package.json` is set to the `/resume/` path, so the
+  app is served correctly from `https://chiragbhuvaneshwara.github.io/resume/`.
+- Clone/fetch over **HTTPS** on machines where the GitHub SSH host key isn't
+  trusted; `gh auth setup-git` enables HTTPS push auth for deploys.
