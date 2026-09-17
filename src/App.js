@@ -16,17 +16,17 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from './components/Theme';
+import theme from './theme';
 import './App.css';
 
-import VisitingCard from './components/VisitingCard';
-import About from './components/About';
-import Trajectory from './components/Trajectory';
-import Projects from './components/Projects';
-import Publications from './components/Publications';
-import Collaboration from './components/Collaboration';
-import ProfileDetails from './components/ProfileDetails';
-import Contact from './components/Contact';
+import VisitingCard from './sections/VisitingCard';
+import About from './sections/About';
+import Trajectory from './sections/Trajectory';
+import Projects from './sections/Projects';
+import Publications from './sections/Publications';
+import Collaboration from './sections/Collaboration';
+import ProfileDetails from './sections/ProfileDetails';
+import Contact from './sections/Contact';
 
 const navItems = [
   { label: 'Home', href: '#home' },

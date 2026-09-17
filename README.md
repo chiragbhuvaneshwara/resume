@@ -24,9 +24,13 @@ in the sections below the fold.
 ```
 src/
   App.js                 layout + responsive navigation
-  config.js              all outward-facing links + EC-TEL facts (edit here)
-  components/
-    Theme.js             minimal light theme, responsive font scaling
+  config/
+    index.js             all outward-facing links + EC-TEL facts (edit here)
+  theme/
+    index.js             minimal light theme, responsive font scaling
+  components/            reusable/shared components
+    Skills.js            primary + secondary skill chips
+  sections/              page sections composed in App
     VisitingCard.js      above-the-fold connect + EC-TEL + PhD dashboard
     About.js             "What I Work On" + research interests
     Trajectory.js        research-trajectory diagram
@@ -35,11 +39,18 @@ src/
     Collaboration.js     interdisciplinary collaboration
     ProfileDetails.js    current role (K8) + doctoral research + skills
     Contact.js           contact footer
-public/
+public/                  static assets served at the site root
   profile.png            headshot avatar (also the browser-tab favicon source)
+  robots.txt             crawler rules + sitemap reference
+  sitemap.xml            single-URL sitemap for search engines
+  google*.html           Google Search Console verification file
 ```
 
-To update contact links, the demo URL, or EC-TEL details, edit **`src/config.js`**.
+To update contact links, the demo URL, or EC-TEL details, edit **`src/config/index.js`**.
+
+> Static files under `public/` (favicon, `robots.txt`, `sitemap.xml`, and the
+> Google verification file) must live at the `public/` root — they are copied
+> as-is to the deployed site root and are required there by browsers/crawlers.
 
 ## Local development
 

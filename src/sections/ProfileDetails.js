@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Typography, Grid, Paper, Stack } from '@mui/material';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
-import Skills from './Skills';
+import Skills from '../components/Skills';
 
 function ProfileDetails() {
   return (
