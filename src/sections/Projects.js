@@ -26,7 +26,7 @@ const projectsData = [
     subtitle:
       'An AI-Supported Tool for Structured Curriculum Co-Design (EC-TEL 2026 demo)',
     associatedWith: 'K8 Institut für strategische Ästhetik · Twin4Resilience',
-    badge: 'EC-TEL 2026 Best Demo Award Nominee',
+    badge: 'EC-TEL 2026 Best Demo Award',
     tags: [
       'Generative AI',
       'Learning Technologies',
@@ -35,7 +35,7 @@ const projectsData = [
       'EC-TEL 2026',
     ],
     description:
-      "This is the tool behind my EC-TEL 2026 demo paper — accepted as a demo paper to the conference program and Springer proceedings (26% acceptance rate). It helps educators and curriculum designers put together structured learning journeys. The trick is that it doesn't let a language model just write whatever it wants — the generation happens inside a pedagogical workflow with real constraints. It suggests Micro-Learning Units from a curated catalogue and explains the suggestions, helps align things with learning outcomes and competencies, proposes activities, methods, and tools, and pulls it all into a coherent teaching plan. The final decisions stay with the educator. That's the point.",
+      "This is the tool behind my EC-TEL 2026 demo paper, which won the conference's Best Demonstration Award (24 submissions → 13 accepted demos → 3 nominees → 1 award). It was built at K8 within the Twin4Resilience project together with Tobias Meyer, Julia Pierzina, Sónia Alves, Müge Gümüş, and Soenke Zehle. It helps educators and curriculum designers put together structured learning journeys. The trick is that it doesn't let a language model just write whatever it wants — the generation happens inside a pedagogical workflow with real constraints. It suggests Micro-Learning Units from a curated catalogue and explains the suggestions, helps align things with learning outcomes and competencies, proposes activities, methods, and tools, and pulls it all into a coherent teaching plan. The final decisions stay with the educator. That's the point.",
     tools: 'React, backend API, LLM integration',
     link: LINKS.demo,
   },
@@ -97,7 +97,7 @@ function ProjectCard({ project, onOpen }) {
             {project.badge && (
               <Chip
                 icon={<EmojiEventsOutlinedIcon />}
-                label="Best Demo Nominee"
+                label={project.badge}
                 size="small"
                 color="primary"
                 sx={{ mb: 1.5 }}

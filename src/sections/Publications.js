@@ -22,7 +22,7 @@ const selected = [
       'Chirag Bhuvaneshwara, Tobias Meyer, Julia Pierzina, Sónia Alves, Müge Gümüs, Soenke Zehle',
     booktitle: 'EC-TEL 2026 (Demo Paper, Springer Proceedings)',
     year: '2026',
-    note: 'Best Demo Award nominee',
+    note: 'Best Demonstration Award winner',
     url: '',
   },
   {
@@ -141,6 +141,15 @@ function Publications() {
           sx={{ mb: 2 }}
         >
           Full list on Google Scholar
+        </Button>
+        <Button
+          variant="text"
+          href={LINKS.orcid}
+          target="_blank"
+          rel="noopener me"
+          sx={{ mb: 2, ml: 1 }}
+        >
+          ORCID 0000-0002-7262-8708
         </Button>
 
         <List disablePadding>

@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import BadgeOutlinedIcon from '@mui/icons-material/BadgeOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { LINKS } from '../config';
 
@@ -77,6 +78,16 @@ function Contact() {
               sx={{ color: '#fff', borderColor: '#475569' }}
             >
               Google Scholar
+            </Button>
+            <Button
+              variant="outlined"
+              startIcon={<BadgeOutlinedIcon />}
+              href={LINKS.orcid}
+              target="_blank"
+              rel="noopener me"
+              sx={{ color: '#fff', borderColor: '#475569' }}
+            >
+              ORCID
             </Button>
           </Stack>
 

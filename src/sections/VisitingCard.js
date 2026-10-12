@@ -17,6 +17,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import BadgeOutlinedIcon from '@mui/icons-material/BadgeOutlined';
 import RocketLaunchOutlinedIcon from '@mui/icons-material/RocketLaunchOutlined';
 import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
@@ -107,7 +108,7 @@ function VisitingCard() {
           <Grid item xs={12} md={4} sx={{ order: { xs: 1, md: 2 } }}>
             <Paper elevation={0} sx={cardSx}>
               <Chip
-                label="EC-TEL 2026 · Valencia · Live Demo"
+                label="EC-TEL 2026 · Valencia · Best Demo Award"
                 color="primary"
                 size="small"
                 sx={{ alignSelf: 'flex-start', mb: 1, fontWeight: 600 }}
@@ -121,19 +122,15 @@ function VisitingCard() {
               <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap sx={{ mb: 1 }}>
                 <Chip
                   icon={<EmojiEventsOutlinedIcon />}
-                  label="Best Demo nominee"
+                  label="Best Demonstration Award winner"
                   size="small"
                   color="primary"
                   variant="outlined"
                 />
               </Stack>
-              <Stack spacing={0.25} sx={{ mb: 1.5 }}>
-                {ECTEL.sessions.map((s) => (
-                  <Typography key={s.label} variant="caption" color="text.secondary">
-                    <strong>{s.label}:</strong> {s.when}
-                  </Typography>
-                ))}
-              </Stack>
+              <Typography variant="caption" color="text.secondary" sx={{ mb: 1.5 }}>
+                Selected from {ECTEL.selection}.
+              </Typography>
               <Box sx={{ mt: 'auto' }}>
                 <Button
                   variant="contained"
@@ -259,6 +256,9 @@ function VisitingCard() {
                 </Link>
                 <Link href={LINKS.scholar} target="_blank" rel="noopener" sx={{ color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: 0.5 }}>
                   <SchoolOutlinedIcon fontSize="small" /> <Typography variant="caption">Scholar</Typography>
+                </Link>
+                <Link href={LINKS.orcid} target="_blank" rel="noopener me" sx={{ color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                  <BadgeOutlinedIcon fontSize="small" /> <Typography variant="caption">ORCID</Typography>
                 </Link>
               </Stack>
             </Paper>
