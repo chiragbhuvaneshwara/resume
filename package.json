@@ -1,7 +1,7 @@
 {
-  "name": "resume-gh-pages-app",
+  "name": "chiragbhuvaneshwara.github.io",
   "version": "0.1.0",
-  "homepage": "https://chiragbhuvaneshwara.github.io/resume/",
+  "homepage": "https://chiragbhuvaneshwara.github.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",

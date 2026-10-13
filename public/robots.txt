@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://chiragbhuvaneshwara.github.io/resume/sitemap.xml
+Sitemap: https://chiragbhuvaneshwara.github.io/sitemap.xml

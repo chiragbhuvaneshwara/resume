@@ -4,7 +4,7 @@ A minimal, responsive personal landing page / digital visiting card for
 **Chirag Bhuvaneshwara** — computer scientist working across human-centered AI,
 learning technologies, and affective computing.
 
-🔗 **Live:** https://chiragbhuvaneshwara.github.io/resume/
+🔗 **Live:** https://chiragbhuvaneshwara.github.io/
 
 Built for EC-TEL 2026 as a single-screen "visiting card": above the fold it shows
 how to connect (email, LinkedIn link + QR code), the EC-TEL 2026 demo
@@ -81,7 +81,10 @@ GitHub Pages usually reflects the change within 1–3 minutes.
 
 ### Notes
 
-- The `homepage` field in `package.json` is set to the `/resume/` path, so the
-  app is served correctly from `https://chiragbhuvaneshwara.github.io/resume/`.
+- This is the GitHub Pages **user site** repo (`chiragbhuvaneshwara.github.io`),
+  so the app is served from the domain root. Pages must deploy from the
+  `gh-pages` branch (Settings → Pages).
+- The old URL `https://chiragbhuvaneshwara.github.io/resume/` redirects here
+  from the `gh-pages` branch of the old `resume` repo.
 - Clone/fetch over **HTTPS** on machines where the GitHub SSH host key isn't
   trusted; `gh auth setup-git` enables HTTPS push auth for deploys.
